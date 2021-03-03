@@ -1,0 +1,14 @@
+version: '3'
+services:
+  wp:
+    build: .
+    # image: knights007/wordpress:v1.0.1
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_PASSWORD: qwerty
+    # restart: unless-stopped
+  mysql:
+    image: "mysql:5.7"
+    environment:
+      MYSQL_ROOT_PASSWORD: qwerty
